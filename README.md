@@ -4,6 +4,11 @@ Student project as part of the course [188.387 Semi-Automatic Information and Kn
 
 ![NYSE Ontology](img/nyse-ontology.png)
 
+## Contributors
+
+- Bernhard Kreutzer
+- Martin Weise
+
 ## License
 
 - MIT
