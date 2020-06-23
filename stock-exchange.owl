@@ -1,0 +1,954 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#"
+     xml:base="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl"
+     xmlns:g="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl"
+     xmlns:s="https://schema.org/"
+     xmlns:dbp="http://dbpedia.org/"
+     xmlns:odp="http://www.ontologydesignpatterns.org/cp/owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ste="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/terms/"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
+    <owl:Ontology rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/place.owl"/>
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/price.owl"/>
+        <dc:license rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Copyright 2020 Bernhard Kreutzer and Martin Weise
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</dc:license>
+        <rdfs:comment xml:lang="en">Facility where stockbrokers and traders can buy and sell securities, such as shares of stock and bonds and other financial instruments.</rdfs:comment>
+        <rdfs:label xml:lang="en">Stock Exchange Topology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/place.owl#hasLocation -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/place.owl#hasLocation">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/place.owl#isLocationOf -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/place.owl#isLocationOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/price.owl#hasPrice -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/price.owl#hasPrice">
+        <rdfs:comment xml:lang="en">Defines that something has a price,</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/price.owl#isPriceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/price.owl#isPriceOf">
+        <rdfs:comment xml:lang="en">Defines that this is a price of something</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#buy -->
+
+    <owl:ObjectProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#buy">
+        <owl:inverseOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#offerShares"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Action of acquiring instruments</rdfs:comment>
+        <rdfs:label xml:lang="en">buy shares</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#has_indicator -->
+
+    <owl:ObjectProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#has_indicator">
+        <owl:inverseOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#is_indicator_of"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:comment xml:lang="en">When a company has a KPI</rdfs:comment>
+        <rdfs:label>has indicator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#is_indicator_of -->
+
+    <owl:ObjectProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#is_indicator_of">
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Company"/>
+        <rdfs:comment xml:lang="en">When a KPI is part of a company</rdfs:comment>
+        <rdfs:label>is indicator of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#offerShares -->
+
+    <owl:ObjectProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#offerShares">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">When a company offers shares that can be bought</rdfs:comment>
+        <rdfs:label xml:lang="en">offer shares</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.org/affectedBy -->
+
+    <owl:ObjectProperty rdf:about="https://schema.org/affectedBy">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">When something has impact on another thing</rdfs:comment>
+        <rdfs:label xml:lang="en">affected by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.org/hasPart -->
+
+    <owl:ObjectProperty rdf:about="https://schema.org/hasPart">
+        <owl:inverseOf rdf:resource="https://schema.org/isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Indicates an item that is part of this item.</rdfs:comment>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.org/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://schema.org/isPartOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Indicates an item that this item is part of.</rdfs:comment>
+        <rdfs:label xml:lang="en">is part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/codeStockExchange -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/codeStockExchange">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/StockExchange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Code of the stock exchange ontology e.g. NASDAQ</rdfs:comment>
+        <rdfs:label xml:lang="en">Code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#beforeInterestAndTax -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#beforeInterestAndTax">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Earnings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Earnings before interest and taxes (EBIT) is an indicator of a company&apos;s profitability. EBIT can be calculated as revenue minus expenses excluding tax and interest. EBIT is also referred to as operating earnings, operating profit, and profit before interest and taxes.</rdfs:comment>
+        <rdfs:label xml:lang="en">EBIT</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#beforeTax -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#beforeTax">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Earnings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Earnings are the main determinant of a company&apos;s share price, because earnings and the circumstances relating to them can indicate whether the business will be profitable and successful in the long run.</rdfs:comment>
+        <rdfs:label xml:lang="en">Before Tax</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#cashAndCashEquity -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#cashAndCashEquity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Cash"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Cash and cash equivalents refers to the line item on the balance sheet that reports the value of a company&apos;s assets that are cash or can be converted into cash immediately.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://www.investopedia.com/terms/c/cashandcashequivalents.asp</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Cash and Cash Equity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#current -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#current">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Liabilities"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Something that a person or company owes somebody at the current time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Current Liability</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#deprication -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#deprication">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Deprication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Value loss of capital over time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Capital Deprication</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#expenditure -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#expenditure">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Expenditure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Capital expenditures, commonly known as CapEx, are funds used by a company to acquire, upgrade, and maintain physical assets such as property, buildings, an industrial plant, technology, or equipment.</rdfs:comment>
+        <rdfs:label xml:lang="en">CapEx</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#financing -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#financing">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Cash"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Form of financing in which a loan made to a company is backed by a company&apos;s expected cash flows.</rdfs:comment>
+        <rdfs:label xml:lang="en">Financing</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#high -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#high">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Maximal value</rdfs:comment>
+        <rdfs:label xml:lang="en">Instrument High</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#income -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#income">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Operating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Operating income is an accounting figure that measures the amount of profit realized from a business&apos;s operations, after deducting operating expenses such as wages, depreciation, and cost of goods sold (COGS)</rdfs:comment>
+        <rdfs:label xml:lang="en">Operating Income</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#intangibleAssets -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#intangibleAssets">
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Intangible"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">An intangible asset is an asset that is not physical in nature. Goodwill, brand recognition and intellectual property, such as patents, trademarks, and copyrights, are all intangible assets. Intangible assets exist in opposition to tangible assets, which include land, vehicles, equipment, and inventory.</rdfs:comment>
+        <rdfs:label xml:lang="en">Intangible Assets</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#investing -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#investing">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Cash"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Cash Flow from Investing Activities</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://www.investopedia.com/terms/c/cashflowfinvestingactivities.asp</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Investing</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#longTermInvestments -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#longTermInvestments">
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Investments"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">An investment is an asset or item acquired with the goal of generating income or appreciation. In an economic sense, an investment is the purchase of goods that are not consumed today but are used in the future to create wealth.</rdfs:comment>
+        <rdfs:label xml:lang="en">Long-Term Investments</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#low -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#low">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Minimal value</rdfs:comment>
+        <rdfs:label xml:lang="en">Instrument Low</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#margin -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#margin">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#GrossProfit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Gross margin is a company&apos;s net sales revenue minus its cost of goods sold (COGS). In other words, it is the sales revenue a company retains after incurring the direct costs associated with producing the goods it sells, and the services it provides. The higher the gross margin, the more capital a company retains on each dollar of sales, which it can then use to pay other costs or satisfy debt obligations. The net sales figure is simply gross revenue, less the returns, allowances, and discounts.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gross Margin</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#netCashFlow -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#netCashFlow">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Cash"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Cash flow is the net amount of cash and cash-equivalents being transferred into and out of a business. At the most fundamental level, a company’s ability to create value for shareholders is determined by its ability to generate positive cash flows, or more specifically, maximize long-term free cash flow (FCF).</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://www.investopedia.com/terms/c/cashflow.asp</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Net Cash Flow</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#netIncome -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#netIncome">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Earnings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">According to the Internal Revenue Service (IRS), earned income includes wages, salaries, bonuses, commissions, tips, and net earnings from self-employment. It can also include long-term disability and union strike benefits and, in some cases, payments from certain deferred retirement compensation arrangements.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://www.investopedia.com/terms/e/earnedincome.asp</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Net Income</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#netReceiveables -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#netReceiveables">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Earnings"/>
+        <rdfs:comment xml:lang="en">Net receivables are the total money owed to a company by its customers minus the money owed that will likely never be paid. Net receivables are often expressed as a percentage, and a higher percentage indicates a business has a greater ability to collect from its customers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Net Receiveables</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#open -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#open">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Value when trading was opened</rdfs:comment>
+        <rdfs:label xml:lang="en">Instrument Open</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#other -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#other">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Liabilities"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Something that a person or company owes somebody that cannot be categorized properly into economic terms.</rdfs:comment>
+        <rdfs:label xml:lang="en">Other Liability</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#otherItems -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#otherItems">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Operating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Revenue that cannot be categorized into other economical terms and accounts</rdfs:comment>
+        <rdfs:label xml:lang="en">Other Items</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#perShare -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#perShare">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Earnings"/>
+        <rdfs:comment xml:lang="en">Earnings per share (EPS) is calculated as a company&apos;s profit divided by the outstanding shares of its common stock. The resulting number serves as an indicator of a company&apos;s profitability.</rdfs:comment>
+        <rdfs:label xml:lang="en">EPS</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#period_end -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#period_end">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">“Closing” is the process of advancing from one month or period to the next or from one year to the next. In most computerized accounting systems the periods are closed by executing a menu command. The accounting month end close checklist usually involves nothing more than entering the next month and responding to the program’s suggestion to print various month-end reports.</rdfs:comment>
+        <rdfs:label xml:lang="en">Period End</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#profit -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#profit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#GrossProfit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Gross profit is the profit a company makes after deducting the costs associated with making and selling its products, or the costs associated with providing its services.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gross Profit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#ratio -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#ratio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Cash"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">The cash ratio is a measurement of a company&apos;s liquidity, specifically the ratio of a company&apos;s total cash and cash equivalents to its current liabilities. The metric calculates a company&apos;s ability to repay its short-term debt with cash or near-cash resources, such as easily marketable securities. This information is useful to creditors when they decide how much money, if any, they would be willing to loan a company.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://www.investopedia.com/terms/c/cash-ratio.asp</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Ratio</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#surplus -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#surplus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Capital"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Component of shareholders&apos; equity, which represents the amount the corporation raises on the issue of shares in excess of their par value (nominal value) of the shares (common stock).</rdfs:comment>
+        <rdfs:label xml:lang="en">Capital Surplus</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#ticker -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#ticker">
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Company"/>
+        <rdfs:comment xml:lang="en">Abbreviation used to uniquely identify publicly traded shares of a particular stock on a particular stock market.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ticker</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#total -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#total">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Liabilities"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Something that a person or company owes somebody in aggregated form.</rdfs:comment>
+        <rdfs:label xml:lang="en">Total Liability</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#totalAssets -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#totalAssets">
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Assets"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Total number of assets.</rdfs:comment>
+        <rdfs:label xml:lang="en">Total Assets</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#totalRevenue -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#totalRevenue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Earnings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Revenue is the income generated from normal business operations and includes discounts and deductions for returned merchandise. It is the top line or gross income figure from which costs are subtracted to determine net income.</rdfs:comment>
+        <rdfs:label xml:lang="en">Total Revenue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#volume -->
+
+    <owl:DatatypeProperty rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#volume">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">Aggregated sum of traded instruments for a given timespan</rdfs:comment>
+        <rdfs:label xml:lang="en">Instrument Volume</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/City -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/City">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/place.owl#isLocationOf"/>
+                <owl:someValuesFrom rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Company"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/place.owl#hasLocation"/>
+                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/place.owl#Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/place.owl#isLocationOf"/>
+                <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/StockExchange"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A city is a large and permanent human settlement. Although there is no agreement on how a city is distinguished from a town in general English language meanings, many cities have a particular administrative, legal, or historical status based on local law. Cities generally have complex systems for sanitation, utilities, land usage, housing, and transportation. The concentration of development greatly facilitates interaction between people and businesses, sometimes benefiting both parties in the process, but it also presents challenges to managing urban growth.</rdfs:comment>
+        <rdfs:label xml:lang="en">City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/StockExchange -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/StockExchange">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#buy"/>
+                <owl:someValuesFrom rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Company"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/place.owl#hasLocation"/>
+                <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/City"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A stock exchange or bourse is an exchange where stock brokers and traders can buy and/or sell stocks (also called shares), bonds, and other securities. Stock exchanges may also provide facilities for issue and redemption of securities and other financial instruments, and capital events including the payment of income and dividends. Securities traded on a stock exchange include stock issued by listed companies, unit trusts, derivatives, pooled investment products and bonds. Stock exchanges often function as &quot;continuous auction&quot; markets, with buyers and sellers consummating transactions at a central location, such as the floor of the exchange.</rdfs:comment>
+        <rdfs:isDefinedBy>http://dbpedia.org/page/Stock_exchange</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Stock Exchange</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/property/Instrument -->
+
+    <owl:Class rdf:about="http://dbpedia.org/property/Instrument">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/price.owl#hasPrice"/>
+                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/price.owl#Price"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/isPartOf"/>
+                <owl:allValuesFrom rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Company"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Financial instruments are monetary contracts between parties. They can be created, traded, modified and settled. They can be cash (currency), evidence of an ownership interest in an entity (share), or a contractual right to receive or deliver cash (bond). International Accounting Standards IAS 32 and 39 define a financial instrument as &quot;any contract that gives rise to a financial asset of one entity and a financial liability or equity instrument of another entity&quot;.</rdfs:comment>
+        <rdfs:isDefinedBy>http://dbpedia.org/page/Financial_instrument</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Instrument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/price.owl#Currency -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/price.owl#Currency">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/property/Instrument"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/price.owl#Price -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/price.owl#Price">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/isPartOf"/>
+                <owl:allValuesFrom rdf:resource="http://dbpedia.org/property/Instrument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Assets -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Assets">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:comment xml:lang="en">An asset is a resource with economic value that an individual, corporation, or country owns or controls with the expectation that it will provide a future benefit.</rdfs:comment>
+        <rdfs:label xml:lang="en">Assets</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Bond -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Bond">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:comment xml:lang="en">A bond is a fixed income instrument that represents a loan made by an investor to a borrower (typically corporate or governmental). A bond could be thought of as an I.O.U. between the lender and borrower that includes the details of the loan and its payments.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">https://www.investopedia.com/terms/b/bond.asp</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Bond</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Capital -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Capital">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:comment xml:lang="en">Capital is a term for financial assets, such as funds held in deposit accounts and/or funds obtained from special financing sources.</rdfs:comment>
+        <rdfs:label xml:lang="en">Capital</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#CapitalStock -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#CapitalStock">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Capital"/>
+        <rdfs:comment xml:lang="en">Capital stock is the number of common and preferred shares that a company is authorized to issue, according to its corporate charter.</rdfs:comment>
+        <rdfs:label xml:lang="en">Capital Stock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Cash -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Cash">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/affectedBy"/>
+                <owl:allValuesFrom rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Liabilities"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Cash is money in the physical form of currency, such as banknotes and coins.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cash</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Certificate -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Certificate">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:comment xml:lang="en">A certificate of deposit (CD) is a product offered by banks and credit unions that provides an interest rate premium in exchange for the customer agreeing to leave a lump-sum deposit untouched for a predetermined period of time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Certificate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Comodity -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Comodity">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:comment xml:lang="en">A commodity is a basic good used in commerce that is interchangeable with other goods of the same type.</rdfs:comment>
+        <rdfs:label xml:lang="en">Commodity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Company -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Company">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/place.owl#hasLocation"/>
+                <owl:someValuesFrom rdf:resource="http://dbpedia.org/ontology/City"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#has_indicator"/>
+                <owl:someValuesFrom rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#offerShares"/>
+                <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/StockExchange"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://dbpedia.org/property/Instrument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Legal entity representing an association of people, whether natural, legal, or a mixture of both, with a specific objective.</rdfs:comment>
+        <rdfs:label xml:lang="en">Company</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Deprication -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Deprication">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Capital"/>
+        <rdfs:comment xml:lang="en">Decline in value of a capital asset</rdfs:comment>
+        <rdfs:label xml:lang="en">Capital Deprication</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Earnings -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Earnings">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/affectedBy"/>
+                <owl:allValuesFrom rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Investments"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Earnings typically refer to after-tax net income, sometimes known as the bottom line or a company&apos;s profits.</rdfs:comment>
+        <rdfs:label xml:lang="en">Earnings</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Expenditure -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Expenditure">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Capital"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schema.org/affectedBy"/>
+                <owl:allValuesFrom rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Deprication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Capital expenditures, commonly known as CapEx, are funds used by a company to acquire, upgrade, and maintain physical assets such as property, buildings, an industrial plant, technology, or equipment.</rdfs:comment>
+        <rdfs:label xml:lang="en">CapEx</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Fund -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Fund">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:comment xml:lang="en">A fund is a pool of money that is allocated for a specific purpose. A fund can be established for any purpose whatsoever, whether it is a city government setting aside money to build a new civic center, a college setting aside money to award a scholarship, or an insurance company setting aside money to pay its customers’ claims.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fund</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#GrossProfit -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#GrossProfit">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:comment xml:lang="en">Gross profit is the profit a company makes after deducting the costs associated with making and selling its products, or the costs associated with providing its services.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gross Profit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Index -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Index">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:comment xml:lang="en">An index is a method to track the performance of some group of assets in a standardized way. Indexes typically measure the performance of a basket of securities intended to replicate a certain area of the market.</rdfs:comment>
+        <rdfs:label xml:lang="en">Index</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Intangible -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Intangible">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Assets"/>
+        <rdfs:comment xml:lang="en">An intangible asset is an asset that is not physical in nature. Goodwill, brand recognition and intellectual property, such as patents, trademarks, and copyrights, are all intangible assets. Intangible assets exist in opposition to tangible assets, which include land, vehicles, equipment, and inventory.</rdfs:comment>
+        <rdfs:label xml:lang="en">Intangible Assets</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Investments -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Investments">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:comment xml:lang="en">An investment is an asset or item acquired with the goal of generating income or appreciation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Investment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#is_indicator_of"/>
+                <owl:allValuesFrom rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Company"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#period_end"/>
+            <rdf:Description rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#ticker"/>
+        </owl:hasKey>
+        <rdfs:comment xml:lang="en">Key performance indicators (KPIs) refer to a set of quantifiable measurements used to gauge a company’s overall long-term performance. KPIs specifically help determine a company&apos;s strategic, financial, and operational achievements, especially compared to those of other businesses within the same sector.</rdfs:comment>
+        <rdfs:label xml:lang="en">KPI</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Liabilities -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Liabilities">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:comment xml:lang="en">A liability is something a person or company owes, usually a sum of money. Liabilities are settled over time through the transfer of economic benefits including money, goods, or services.</rdfs:comment>
+        <rdfs:label xml:lang="en">Liabilities</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Operating -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Operating">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:comment>Operating revenue is revenue generated from a company&apos;s primary business activities.</rdfs:comment>
+        <rdfs:label xml:lang="en">Operating Revenue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Option -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Option">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:comment xml:lang="en">Options are financial instruments that are derivatives based on the value of underlying securities such as stocks. An options contract offers the buyer the opportunity to buy or sell—depending on the type of contract they hold—the underlying asset. Unlike futures, the holder is not required to buy or sell the asset if they choose not to.</rdfs:comment>
+        <rdfs:label xml:lang="en">Option</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#ResearchAndDevelopment -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#ResearchAndDevelopment">
+        <rdfs:subClassOf rdf:resource="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Key_Performance_Indicator"/>
+        <rdfs:comment>Research and development (R&amp;D) includes activities that companies undertake to innovate and introduce new products and services.</rdfs:comment>
+        <rdfs:label xml:lang="en">R&amp;D</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Stock -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Stock">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:comment xml:lang="en">A stock (also known as equity) is a security that represents the ownership of a fraction of a corporation. This entitles the owner of the stock to a proportion of the corporation&apos;s assets and profits equal to how much stock they own. Units of stock are called &quot;shares.&quot;</rdfs:comment>
+        <rdfs:label xml:lang="en">Stock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Warrant -->
+
+    <owl:Class rdf:about="https://gitlab.com/mweise/stock-exchange-ontology/stock-exchange.owl#Warrant">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/property/Instrument"/>
+        <rdfs:comment xml:lang="en">Warrants are a derivative that give the right, but not the obligation, to buy or sell a security—most commonly an equity—at a certain price before expiration. The price at which the underlying security can be bought or sold is referred to as the exercise price or strike price.</rdfs:comment>
+        <rdfs:label xml:lang="en">Warrant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/price.owl#hasCurrency">
+        <rdfs:comment xml:lang="en">Every price is denoted in a currency</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
